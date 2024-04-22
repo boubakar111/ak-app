@@ -1,0 +1,15 @@
+{
+    "name": "akdouche/kap-system",
+    "description": "prohet de gestion des commandes et fournisseurs",
+    "authors": [
+        {
+            "name": "akdouche boubakar",
+            "email": "akdouche_b@outlook.fr"
+        }
+    ],"autoload": {
+        "psr-4": {
+            "Router\\":"routers/"
+        }
+    },
+    "require": {}
+}
