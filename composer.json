@@ -8,7 +8,9 @@
         }
     ],"autoload": {
         "psr-4": {
-            "Router\\":"routers/"
+            "App\\": "src/",
+            "Routes\\": "routes/",
+            "Database\\": "database/"
         }
     },
     "require": {}

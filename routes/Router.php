@@ -16,6 +16,7 @@ class Router
 
     public function get(string $path, string $action)
     {
+        
         $this->routes['GET'][] = new Route($path, $action);
 
 
@@ -26,7 +27,7 @@ class Router
 
     }
     public function run()
-    {
+    {   
         foreach ($this->routes[$_SERVER['REQUEST_METHOD']] as $route) {
 
             if ($route->matches($this->url)) {

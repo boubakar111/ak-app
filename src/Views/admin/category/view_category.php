@@ -1,0 +1,37 @@
+<?php
+
+?>
+<style>
+    #uni_modal .modal-footer{
+        display:none;
+    }
+</style>
+<div class="container-fluid">
+    <div class="row">
+            <dl>
+                <dt class="text-muted">Category</dt>
+                <dd class='pl-4 fs-4 fw-bold'><?= isset($name) ? $name : 'N/A' ?></dd>
+                <dt class="text-muted">Description</dt>
+                <dd class='pl-4 fs-4 fw-bold'><small><?= isset($description) ? $description : 'N/A' ?></small></dd>
+                <dt class="text-muted">Status</dt>
+                <dd class='pl-4 fs-4 fw-bold'>
+                    <?php 
+                        if(isset($status)){
+                            switch($status){
+                                case 0:
+                                    echo '<span class="rounded-pill badge badge-danger bg-gradient-danger px-3">Inactive</span>';
+                                    break;
+                                case 1:
+                                    echo '<span class="rounded-pill badge badge-success bg-gradient-primatealry px-3">Active</span>';
+                                    break;
+                            }
+                        }
+                    
+                    ?>
+                </dd>
+            </dl>
+    </div>
+    <div class="text-right">
+        <button class="btn btn-dark btn-sm btn-flat" type="button" data-dismiss="modal"><i class="fa fa-close"></i> Close</button>
+    </div>
+</div>
