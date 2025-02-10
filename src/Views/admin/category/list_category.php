@@ -130,4 +130,15 @@ if (isset($_SESSION['username']) && isset($_SESSION['uType'])) {
 			}
 		})
 	}
+$(document).ready(function() {
+
+		$('.table td, .table th').addClass('py-1 px-2 align-middle')
+		$('.table').dataTable({
+			columnDefs: [{
+				orderable: false,
+				targets: 5
+			}],
+		});
+})
+</script>
 </script>

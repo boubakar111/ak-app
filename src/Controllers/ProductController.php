@@ -22,7 +22,7 @@ class ProductController extends Controller
         $this->systemInfoModel = new SystemInfoModel($db);
         $this->productModel = new ProductModel($db);
         $this->categoryModel = new CategoryModel($db);
-        $this->supplierModel = new SupplierModel($db);
+        $this->supplierModel = new SupplierModel($db);       
     }
 
     public function listProduct()
@@ -62,7 +62,7 @@ class ProductController extends Controller
 
         // Pour les requêtes GET, affichez la page HTML avec le formulaire
         $category = $this->categoryModel->getActiveCategories();
-        $supplier = $this->supplierModel->allSupplier();
+        $supplier = $this->supplierModel->getAllSuppliers();
 
         return $this->view('admin.product.manage_price', compact('category', 'supplier'));
     }
@@ -81,17 +81,19 @@ class ProductController extends Controller
             $id = $matches[1];
            
             $product = $this->productModel->getProductById($id);
-            $category = $this->categoryModel->getActiveCategories(); // Récupérer toutes les catégories
-            $info = $this->systemInfoModel->load_system_info();
+            $category = $this->categoryModel->getActiveCategories();
+            $info = $this->systemInfoModel->load_system_info(); // Récupérer toutes les catégories
+            $supplier = $this->supplierModel->getAllSuppliers();
 
             // Charger la vue avec les données
-            return $this->view('admin.product.manage_price', compact('product', 'category', 'info'));
+            return $this->view('admin.product.manage_price', compact('product', 'category','supplier', 'info'));
         }
     } elseif ($_SERVER['REQUEST_METHOD'] === 'POST') {
         // Gestion de la requête POST pour mettre à jour le produit
         $data = [
             'id' => $id,
             'category_id' => $_POST['category_id'],
+            'fournisseur_id'=> $_POST['supplier_id'],
             'nom_produit' => $_POST['nom_produit'],
             'ref_produit' => $_POST['ref_produit'],
             'designiation_produit' => $_POST['designiation_produit'],
@@ -127,22 +129,4 @@ class ProductController extends Controller
     }
 }
 
-    // public function editProduct($id)
-    // {
-    //     if ($_SERVER['REQUEST_METHOD'] === 'GET') {
-    //         $url = $_SERVER['REQUEST_URI'];
-    //         $pattern = '/\/editProduct\/(\d+)/';
-
-    //         // Vérifier si l'ID est présent dans l'URL
-    //         if (preg_match($pattern, $url, $matches)) {
-    //             // Si une correspondance est trouvée, l'ID sera dans $matches[1]
-    //             $id = $matches[1];
-               
-    //             $product = $this->productModel->getProductById($id);
-    //             $category =$this->categoryModel->getActiveCategories();
-    //             $info = $this->systemInfoModel->load_system_info();
-    //             return $this->view('admin.product.manage_price', compact('product','category','info'));
-    //         }
-    //     }
-    // }
 }

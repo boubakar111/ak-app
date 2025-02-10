@@ -47,9 +47,17 @@
                         </p>
                       </a>
                     </li>
+                    <li class="nav-item">
+                      <a href="<?php echo base_url ?>admin/entity/listeSupplier" class="nav-link nav-prices">
+                      <i class="nav-icon fas fa-list"></i>
+                        <p>
+                          List des Entity
+                        </p>
+                      </a>
+                    </li>
                     <li class="nav-header">Transactions</li>
                     <li class="nav-item dropdown">
-                      <a href="<?php echo base_url ?>admin/?page=transactions/manage_transaction" class="nav-link nav-transactions_manage_transaction">
+                      <a href="<?php echo base_url ?>/admin/transaction/manageTransaction" class="nav-link nav-transactions_manage_transaction">
                         <i class="nav-icon fas fa-plus"></i>
                         <p>
                           Vente Directe
@@ -57,7 +65,7 @@
                       </a>
                     </li>
                      <li class="nav-item dropdown">
-                       <a href="<?php echo base_url ?>admin/?page=transactions/manage_transaction" class="nav-link nav-transactions_manage_transaction_avec_facture">
+                       <a href="<?php echo base_url ?>/admin/transaction/manageTransaction" class="nav-link nav-transactions_manage_transaction_avec_facture">
                          <i class="nav-icon fas fa-plus"></i>
                          <p>
                            Vente avec Bon facture

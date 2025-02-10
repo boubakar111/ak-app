@@ -71,7 +71,6 @@ class CategoryController extends Controller
 
                 // Récupérer les données pour le formulaire après mise à jour ou insertion
                 $category = $id ? $this->categoryModel->getCatById($id) : null;
-
                 return $this->view('admin.category.edit_category', compact('category', 'info', 'message'));
             } else {
                 // Erreur de validation

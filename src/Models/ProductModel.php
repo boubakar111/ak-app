@@ -114,7 +114,8 @@ class ProductModel extends Model
             $query = "UPDATE products 
                   SET 
                       nom_produit = :nom_produit, 
-                      ref_produit = :ref_produit, 
+                      ref_produit = :ref_produit,
+                      fournisseur_id = :fournisseur_id, 
                       designiation_produit = :designiation_produit, 
                       category_id = :category_id, 
                       unite_mesure = :unite_mesure, 
@@ -134,6 +135,7 @@ class ProductModel extends Model
             $stmt->bindParam(':id', $data['id'], PDO::PARAM_INT);
             $stmt->bindParam(':nom_produit', $data['nom_produit']);
             $stmt->bindParam(':ref_produit', $data['ref_produit']);
+            $stmt->bindParam(':fournisseur_id', $data['ref_produit']);
             $stmt->bindParam(':designiation_produit', $data['designiation_produit']);
             $stmt->bindParam(':category_id', $data['category_id'], PDO::PARAM_INT);
             $stmt->bindParam(':unite_mesure', $data['unite_mesure'], PDO::PARAM_INT);

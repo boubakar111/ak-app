@@ -173,33 +173,3 @@ if (isset($_SESSION['username']) && isset($_SESSION['uType'])) {
 		})
 	}
 </script>
-<!-- Include the modal structure if not already included -->
-<div class="modal fade" id="uniModal" tabindex="-1" aria-labelledby="uniModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="uniModalLabel"></h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <form id="modalForm">
-                        <div class="form-group">
-                            <label for="productName">Nom du produit</label>
-                            <input type="text" class="form-control" id="productName" name="productName" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="productPrice">Prix du produit</label>
-                            <input type="number" class="form-control" id="productPrice" name="productPrice" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="productDescription">Description du produit</label>
-                            <textarea class="form-control" id="productDescription" name="productDescription" rows="3" required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Sauvegarder</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
